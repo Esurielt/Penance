@@ -1,10 +1,138 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Src/main.gd" type="Script" id=1]
 [ext_resource path="res://UI/MiniMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tex/UIFrame.png" type="Texture" id=4]
 [ext_resource path="res://Tex/font0.tres" type="DynamicFont" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "down"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Down:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 825.792 ), Vector2( -2, 536.952 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "down_r"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Down:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 536.952 ), Vector2( -2, 825.792 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "left"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -456.65, -3.65002 ), Vector2( -56.4949, -3.65002 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "left_r"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -56.4949, -3.65002 ), Vector2( -456.65, -3.65002 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Right:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1368.09, -1 ), Vector2( 981.009, -1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "right_r"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Right:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 981.009, -1 ), Vector2( 1368.09, -1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Up:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, -289.511 ), Vector2( -2, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "up_r"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Up:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 0 ), Vector2( -2, -289.511 ) ]
+}
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -42,9 +170,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -720.0
-margin_top = -282.0
+margin_top = -245.588
 margin_right = 721.0
-margin_bottom = -2.0
+margin_bottom = 34.4119
 expand = true
 
 [node name="Dialogue" type="RichTextLabel" parent="DialogueBox"]
@@ -53,9 +181,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -437.44
-margin_top = -270.881
+margin_top = -251.109
 margin_right = 460.56
-margin_bottom = -93.8807
+margin_bottom = -74.1089
 custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
@@ -73,9 +201,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -436.94
-margin_top = 552.63
+margin_top = -308.631
 margin_right = 461.06
-margin_bottom = 729.63
+margin_bottom = -131.631
 custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
@@ -93,29 +221,32 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -436.94
-margin_top = -562.673
+margin_top = -273.819
 margin_right = 461.06
-margin_bottom = -385.673
+margin_bottom = -96.8192
 custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
 scroll_active = false
 
 [node name="Left" type="TextureRect" parent="."]
-margin_left = -454.0
-margin_top = -1.0
-margin_right = 72.0
-margin_bottom = 899.0
+margin_left = -456.65
+margin_top = -3.65002
+margin_right = 69.35
+margin_bottom = 896.35
 
 [node name="leftopt" type="RichTextLabel" parent="Left"]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 474.06
-margin_top = -271.881
-margin_right = 1372.06
-margin_bottom = -94.8806
+anchor_bottom = 0.5
+margin_left = -149.048
+margin_top = -191.036
+margin_right = 168.951
+margin_bottom = 97.964
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
 custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
@@ -132,9 +263,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -167.0
+margin_left = -166.518
 margin_top = -191.036
-margin_right = 151.0
+margin_right = 151.482
 margin_bottom = 97.964
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -143,3 +274,13 @@ custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
 scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/down = SubResource( 1 )
+anims/down_r = SubResource( 5 )
+anims/left = SubResource( 2 )
+anims/left_r = SubResource( 6 )
+anims/right = SubResource( 3 )
+anims/right_r = SubResource( 7 )
+anims/up = SubResource( 4 )
+anims/up_r = SubResource( 8 )
