@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Map",
+"language": "GDScript",
+"path": "res://Src/Map.gd"
+}, {
+"base": "Node",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Src/APlayer.gd"
+}, {
+"base": "Node",
+"class": "Room",
+"language": "GDScript",
+"path": "res://Src/ARoom.gd"
+} ]
+_global_script_class_icons={
+"Map": "",
+"Player": "",
+"Room": ""
+}
+
+[application]
+
+config/name="Penance"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1440
+window/size/height=900
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
