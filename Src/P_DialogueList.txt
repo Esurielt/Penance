@@ -1,1 +1,0 @@
-ID,Dialogue,Cost,LockBy(0 if null),b_Unlock,UpId,UpOpt,DownId,DownOpt,LeftId,LeftOpt,RightId,RightOpt

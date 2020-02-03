@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX - Earned Patience.wav-2aa47f2b50115ff06f8baadabd2c0ef0.sample"
+
+[deps]
+
+source_file="res://Audio/SFX - Earned Patience.wav"
+dest_files=[ "res://.import/SFX - Earned Patience.wav-2aa47f2b50115ff06f8baadabd2c0ef0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

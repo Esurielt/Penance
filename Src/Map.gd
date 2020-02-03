@@ -6,7 +6,7 @@ class_name Map
 # var b = "text"
 
 var mapbox = preload("res://UI/mapbox.tscn")
-export var Dialogue_Line_Num = 5
+export var Dialogue_Line_Num = 227
 export var Map_Row_Num = 50
 export var Map_Col_Num = 50
 
@@ -24,11 +24,16 @@ func _ready():
 	# load_mapshape()
 	
 func create_room(id):
-	var roomdict = DialogueList[id-1]
+	var roomdict = DialogueList[id] #-1]
+	print(roomdict["ID"], roomdict["Dialogue"])
 	var newRoom = Room.new()
 	var options = [[roomdict["UpId"],roomdict["UpOpt"]],[roomdict["DownId"],roomdict["DownOpt"]],[roomdict["LeftId"],roomdict["LeftOpt"]],[roomdict["RightId"],roomdict["RightOpt"]]]
 	newRoom.init(roomdict["ID"], roomdict["Dialogue"], roomdict["Cost"], roomdict["LockBy"], roomdict["b_Unlock"], options)
 	Rooms[roomdict["ID"]] = newRoom
+	return Rooms[roomdict["ID"]]
+	
+func enter_room(id):
+	Rooms[str(id)].Entered = false
 	
 func spawn_mapbox(player,dir):
 	# it takes the player's position, and a direction(string) and spawn a mapbox instance in that direction.
@@ -53,10 +58,11 @@ func load_mapshape():
 func load_dialogueList():
 	var file = File.new()
 	file.open("res://Src/P_DialogueList.csv", File.READ)
-	for i in range(Dialogue_Line_Num):
+	for i in range(Dialogue_Line_Num+1):
 		var newDict = {}
+		var a = file.get_csv_line()
 		for i in range(len(DialogueKeys)):
-			newDict[DialogueKeys[i]] = file.get_csv_line()
+			newDict[DialogueKeys[i]] =  a[i]
 		DialogueList.append(newDict)
 
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BGM - Main Game Loop.wav-1e9847128b4720b6cc8aee472477155c.sample"
+
+[deps]
+
+source_file="res://Audio/BGM - Main Game Loop.wav"
+dest_files=[ "res://.import/BGM - Main Game Loop.wav-1e9847128b4720b6cc8aee472477155c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
