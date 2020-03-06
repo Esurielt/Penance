@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Src/main.gd" type="Script" id=1]
 [ext_resource path="res://UI/MiniMap.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Audio/BGM - Main Game Loop.wav" type="AudioStream" id=14]
 [ext_resource path="res://Audio/SFX - Making A Choice.wav" type="AudioStream" id=15]
 [ext_resource path="res://Audio/SFX - Earned Patience.wav" type="AudioStream" id=16]
+[ext_resource path="res://Tex/lock.png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "down"
@@ -202,19 +203,26 @@ font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 39
+outline_size = 6
 extra_spacing_top = 14
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
 font_data = ExtResource( 12 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 p = 100
-Star_Room_Num = [ 136, 171, 189, 225 ]
 
 [node name="Background" type="TextureRect" parent="."]
 texture = ExtResource( 4 )
@@ -232,7 +240,6 @@ margin_right = 1114.0
 margin_bottom = 603.0
 
 [node name="Charm" type="Panel" parent="."]
-editor/display_folded = true
 margin_left = 1140.0
 margin_top = 364.0
 margin_right = 1410.0
@@ -259,7 +266,6 @@ visible = false
 texture = ExtResource( 8 )
 
 [node name="DialogueBox" type="TextureRect" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -285,7 +291,6 @@ text = "People are content to look at a beautiful girl. But with her, people can
 scroll_active = false
 
 [node name="Up" type="TextureRect" parent="."]
-editor/display_folded = true
 margin_left = -2.0
 margin_top = -289.511
 margin_right = 1442.0
@@ -308,6 +313,9 @@ margin_top = -17.0
 margin_right = 1443.0
 margin_bottom = 283.0
 texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="upopt" type="RichTextLabel" parent="Up"]
 anchor_left = 0.5
@@ -315,16 +323,23 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -436.94
-margin_top = -308.631
+margin_top = -286.315
 margin_right = 461.06
-margin_bottom = -131.631
+margin_bottom = -109.315
 custom_fonts/normal_font = ExtResource( 9 )
 custom_colors/default_color = Color( 0.917647, 0.913725, 0.913725, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpLock" type="Sprite" parent="Up"]
+position = Vector2( 719.011, 319.64 )
+texture = ExtResource( 17 )
+hframes = 2
 
 [node name="Down" type="TextureRect" parent="."]
-editor/display_folded = true
 margin_left = -2.0
 margin_top = 825.792
 margin_right = 1442.0
@@ -353,17 +368,24 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -436.94
-margin_top = -273.819
-margin_right = 461.06
-margin_bottom = -96.8192
+margin_left = -437.0
+margin_top = -192.081
+margin_right = 461.0
+margin_bottom = -23.0809
 custom_fonts/normal_font = ExtResource( 9 )
 custom_colors/default_color = Color( 0.917647, 0.913725, 0.913725, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DownLock" type="Sprite" parent="Down"]
+position = Vector2( 719.011, 42.9652 )
+texture = ExtResource( 17 )
+hframes = 2
 
 [node name="Left" type="TextureRect" parent="."]
-editor/display_folded = true
 margin_left = -456.65
 margin_top = -3.65002
 margin_right = 69.35
@@ -403,8 +425,12 @@ custom_colors/default_color = Color( 0.917647, 0.913725, 0.913725, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
 scroll_active = false
 
+[node name="LeftLock" type="Sprite" parent="Left"]
+position = Vector2( 493.146, 402.436 )
+texture = ExtResource( 17 )
+hframes = 2
+
 [node name="Right" type="TextureRect" parent="."]
-editor/display_folded = true
 margin_left = 1368.09
 margin_right = 1894.09
 margin_bottom = 900.0
@@ -431,10 +457,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -166.518
-margin_top = -191.036
-margin_right = 151.482
-margin_bottom = 97.964
+margin_left = -144.0
+margin_top = -191.0
+margin_right = 174.0
+margin_bottom = 240.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
@@ -442,6 +468,14 @@ custom_fonts/normal_font = ExtResource( 9 )
 custom_colors/default_color = Color( 0.917647, 0.913725, 0.913725, 1 )
 text = "People are content to look at a beautiful girl. But with her, people can’t help but follow her and love her."
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightLock" type="Sprite" parent="Right"]
+position = Vector2( 42.2726, 410.458 )
+texture = ExtResource( 17 )
+hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/down = SubResource( 1 )
@@ -476,7 +510,6 @@ align = 1
 valign = 1
 
 [node name="Patience" type="Label" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 474.0
@@ -488,6 +521,9 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="Patience"]
 margin_left = 136.0
@@ -496,6 +532,22 @@ margin_right = 208.0
 margin_bottom = 68.0
 rect_scale = Vector2( -1, 1 )
 texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Patience"]
+margin_left = -26.2089
+margin_top = -44.8399
+margin_right = 143.791
+margin_bottom = 4.1601
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Patience"
+align = 1
+valign = 1
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
@@ -506,3 +558,4 @@ stream = ExtResource( 15 )
 
 [node name="SFX_unlock" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+volume_db = -6.0

@@ -11,7 +11,7 @@ export var p = 3
 var in_room = 1
 var currentRoom : Room
 export var positon = [0 , 0] #input the starting postion
-export var Star_Room_Num = [0,0,0,0]
+export var Star_Room_Num = [136,171,189,225]
  
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,8 +24,8 @@ func set_keydict(num_of_room):
 func has_key(need_keys):
 	print(need_keys)
 	for i in need_keys:
-		if !keys[str(i)]:
-			false
+		if !keys[i]:
+			return false
 	return true
 	
 func lose_p(id, cost):

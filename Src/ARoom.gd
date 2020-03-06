@@ -5,7 +5,7 @@ class_name Room
 var ID : int
 var Dialogue : String
 var PCost : int
-var Need_key: Array  ## What room you need to explore to be able to enter this room.
+var Need_key = ["0"]  ## What room you need to explore to be able to enter this room.
 var Give_key: bool
 var up :Array   # [String, id]
 var down:Array
@@ -22,7 +22,9 @@ func init(id, dialogue, pcost, needkey, givekey, options):
 	Dialogue = str(dialogue)
 	PCost = int(pcost)
 	Need_key = needkey.split(" ")
-	Give_key = bool(givekey)
+	if not "0" in Need_key:
+		Need_key.append("0")
+	Give_key = bool(int(givekey))
 	up = [options[0][1],int(options[0][0])]
 	down = [options[1][1],int(options[1][0])]
 	left = [options[2][1],int(options[2][0])]

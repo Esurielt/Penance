@@ -6,7 +6,7 @@ class_name Map
 # var b = "text"
 
 var mapbox = preload("res://UI/mapbox.tscn")
-export var Dialogue_Line_Num = 227
+export var Dialogue_Line_Num = 230
 export var Map_Row_Num = 50
 export var Map_Col_Num = 50
 
@@ -24,6 +24,8 @@ func _ready():
 	# load_mapshape()
 	
 func create_room(id):
+	if Rooms.has(str(id)):
+		return Rooms[str(id)]
 	var roomdict = DialogueList[id] #-1]
 	print(roomdict["ID"], roomdict["Dialogue"])
 	var newRoom = Room.new()
@@ -57,7 +59,7 @@ func load_mapshape():
 	
 func load_dialogueList():
 	var file = File.new()
-	file.open("res://Src/P_DialogueList.csv", File.READ)
+	file.open("res://Src/P_DialogueList.res", File.READ)
 	for i in range(Dialogue_Line_Num+1):
 		var newDict = {}
 		var a = file.get_csv_line()
